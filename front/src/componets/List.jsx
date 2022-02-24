@@ -1,11 +1,7 @@
 import React, {useContext, useEffect} from 'react'
-<<<<<<< HEAD
 import {Store} from '../helpers/Store';
 
 const HOST_API = "http://localhost:8080/api";
-=======
-
->>>>>>> 316bd83bf313edd35c680d2d3c9d8b3ad4181ab3
 const List = () => {
     const { dispatch, state: { todo } } = useContext(Store);
     const currentList = todo.list;
