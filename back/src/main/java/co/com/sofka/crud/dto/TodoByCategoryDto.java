@@ -1,25 +1,16 @@
-package co.com.sofka.crud.entity;
+package co.com.sofka.crud.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import co.com.sofka.crud.entity.Todo;
+import org.apache.catalina.LifecycleState;
+
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-public class TodoByCategory {
-    @Id
-    @GeneratedValue
-    private Long id;
+public class TodoByCategoryDto {
 
-    @Column
-    private String name;
-
-    @Column
-    private boolean completed;
-
-    @Column
+    public Long id;
+    public String name;
+    public boolean completed;
     private List<Todo> todos = new ArrayList<>();
 
     public Long getId() {
