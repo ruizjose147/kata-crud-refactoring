@@ -1,11 +1,13 @@
 import React, {useContext, useEffect} from 'react'
-import {Store} from '../helpers/Store';
+import { Store } from '../../Store';
+import List from '../List';
+import Form from '../Form';
 
 const HOST_API = "http://localhost:8080/api";
 
 const CategoryList = () => {
-    //const { dispatch, state: { todoByCategory } } = useContext(Store);
-    //const currentList = todoByCategory.list;
+    const { dispatch, state: { todoByCategory } } = useContext(Store);
+    const currentList = todoByCategory.list;
   
     useEffect(() => {
       fetch(HOST_API + "/todosbycategory")
@@ -24,32 +26,6 @@ const CategoryList = () => {
       })
     };
   
-    /*const onEdit = (todoByCategory) => {
-      dispatch({ type: "edit-item", item: todoByCategory })
-    };*/
-  
-    /*const onChange = (event, todoByCategory) => {
-      const request = {
-        name: todoByCategory.name,
-        id: todoByCategory.id,
-        completed: event.target.checked
-      };
-      fetch(HOST_API + "/todobycategory", {
-        method: "PUT",
-        body: JSON.stringify(request),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => response.json())
-        .then((todoByCategory) => {
-          dispatch({ type: "update-item", item: todoByCategory });
-        });
-    };*/
-  
-    const decorationDone = {
-      textDecoration: 'line-through'
-    };
     return <div>
       <table >
         <thead>

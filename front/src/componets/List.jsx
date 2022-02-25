@@ -1,11 +1,14 @@
 import React, {useContext, useEffect} from 'react'
-import {Store} from '../helpers/Store';
+import { Store } from '../Store';
 
 const HOST_API = "http://localhost:8080/api";
 
-const List = () => {
+const List = ({categoryId}) => {
+  
     const { dispatch, state: { todo } } = useContext(Store);
-    const currentList = todo.list;
+    const currentList = todo.list.filter(todo => {
+      return todo.ListCategory === categoryId;
+    });
   
     useEffect(() => {
       fetch(HOST_API + "/todos")
@@ -32,7 +35,8 @@ const List = () => {
       const request = {
         name: todo.name,
         id: todo.id,
-        completed: event.target.checked
+        completed: event.target.checked,
+        ListCategory: categoryId
       };
       fetch(HOST_API + "/todo", {
         method: "PUT",
