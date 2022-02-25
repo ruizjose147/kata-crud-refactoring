@@ -1,18 +1,13 @@
 package co.com.sofka.crud.entity;
 
-import org.w3c.dom.stylesheets.LinkStyle;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "todo")
 public class Todo {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
 
     @Column

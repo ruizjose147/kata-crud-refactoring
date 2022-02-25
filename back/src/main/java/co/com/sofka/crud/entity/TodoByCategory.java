@@ -1,16 +1,14 @@
 package co.com.sofka.crud.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "Category")
 public class TodoByCategory {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -19,7 +17,7 @@ public class TodoByCategory {
     @Column
     private boolean completed;
 
-    @Column
+    @JoinColumn(name = "ListCategory")
     private List<Todo> todos = new ArrayList<>();
 
     public Long getId() {
