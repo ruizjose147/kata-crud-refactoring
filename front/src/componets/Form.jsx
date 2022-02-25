@@ -1,9 +1,9 @@
 import React, {useContext, useRef, useState} from 'react'
-import {Store} from '../helpers/Store';
+import {Store} from '../Store';
 
 const HOST_API = "http://localhost:8080/api";
 
-const Form = () => {
+const Form = ({categoryId}) => {
     const formRef = useRef(null);
     const { dispatch, state: { todo } } = useContext(Store);
     const item = todo.item;
@@ -15,7 +15,8 @@ const Form = () => {
       const request = {
         name: state.name,
         id: null,
-        completed: false
+        completed: false,
+        ListCategory: categoryId
       };
   
   
@@ -40,7 +41,8 @@ const Form = () => {
       const request = {
         name: state.name,
         id: item.id,
-        isCompleted: item.isCompleted
+        isCompleted: item.isCompleted,
+        ListCategory: categoryId
       };
   
   

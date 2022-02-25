@@ -15,5 +15,5 @@ public class TodoByCategoryDto {
     public String name;
     public boolean completed;
     private List<Todo> todos = new ArrayList<>();
-    
+
 }
