@@ -1,7 +1,6 @@
 package co.com.sofka.crud.dto;
 
 import co.com.sofka.crud.entity.Todo;
-import org.apache.catalina.LifecycleState;
 
 import java.util.ArrayList;
 import java.util.List;
