@@ -18,11 +18,8 @@ public class TodoByCategory {
     @Column
     private String name;
 
-    @Column
-    private boolean completed;
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ListCategory")
+    @JoinColumn(name = "groupListId")
     private List<Todo> todos = new ArrayList<>();
 
     public TodoByCategory() {

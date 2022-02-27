@@ -22,6 +22,6 @@ public class Todo {
     private boolean completed;
 
     @Column
-    private String groupListId;
+    private Long groupListId;
 
-    }
+}
