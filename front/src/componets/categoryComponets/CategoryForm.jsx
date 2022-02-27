@@ -1,21 +1,20 @@
 import React, { useContext, useRef, useState } from 'react'
-import { Store } from '../../Store';
+import Store from '../../Store';
 
-const HOST_API = "http://localhost:8080/api";
+const HOST_API = "http://localhost:8080/api/category";
 
 const CategoryForm = () => {
   const formRef = useRef(null);
-  const { dispatch, state: { Category } } = useContext(Store);
-  const item = Category.item;
+  const { dispatch, state: { category } } = useContext(Store);
+  const item = category.item;
   const [state, setState] = useState(item);
 
   const onAdd = (event) => {
     event.preventDefault();
 
     const request = {
-      name: state.name,
+      nameList: state.nameList,
       id: null,
-      completed: false
     };
 
     fetch(HOST_API + "/todobycategory", {
@@ -26,9 +25,9 @@ const CategoryForm = () => {
       }
     })
       .then(response => response.json())
-      .then((list) => {
+      .then((category) => {
         dispatch({ type: "add-item", item: list });
-        setState({ name: "" });
+        setState({ nameList: "" });
         formRef.current.reset();
       });
   }

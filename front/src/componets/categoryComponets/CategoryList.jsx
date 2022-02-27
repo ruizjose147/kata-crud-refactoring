@@ -3,7 +3,7 @@ import { Store } from '../../Store';
 import List from '../List';
 import Form from '../Form';
 
-const HOST_API = "http://localhost:8080/api";
+const HOST_API = "http://localhost:8080/api/category";
 
 const CategoryList = () => {
     const { dispatch, state: { todoByCategory } } = useContext(Store);
@@ -27,27 +27,24 @@ const CategoryList = () => {
     };
   
     return <div>
-      <table >
-        <thead>
-          <tr>
-            <td>ID</td>
-            <td>Tarea</td>
-            <td>¿Completado?</td>
-          </tr>
-        </thead>
-        <tbody>
-          {currentList.map((todo) => {
-            return <tr key={todo.id} style={todoByCategory.completed ? decorationDone : {}}>
-              <td>{todoByCategory.id}</td>
-              <td>{todoByCategory.name}</td>
-              <td><input type="checkbox" defaultChecked={todoByCategory.completed} onChange={(event) => onChange(event, todo)}></input></td>
-              <td><button onClick={() => onDelete(todoByCategory.id)}>Eliminar</button></td>
-              <td><button onClick={() => onEdit(todoByCategory)}>Editar</button></td>
-            </tr>
-          })}
-        </tbody>
-      </table>
+      {currentList.map((element) =>{
+        return<div className="border my-5 " key={elemento.id} >
+        <div >
+            <span >Categoria</span>
+            <input 
+            className="form-control "  
+            disabled={true} 
+            value={elemento.nameList} />
+            <button
+            className="btn btn-outline-danger" 
+            onClick={() => onDelete(elemento.id)} >Eliminar
+            </button>
+        </div>
+        <Form todoListId={elemento.id} />
+        <List todoListId={elemento.id} />
     </div>
-  }
+      })}
+  </div>
+}
 
-  export default CategoryList;
+export default CategoryList;
