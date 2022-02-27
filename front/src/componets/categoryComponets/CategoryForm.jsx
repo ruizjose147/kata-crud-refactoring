@@ -26,7 +26,7 @@ const CategoryForm = () => {
     })
       .then(response => response.json())
       .then((category) => {
-        dispatch({ type: "add-item", item: list });
+        dispatch({ type: "category-add", item: category });
         setState({ nameList: "" });
         formRef.current.reset();
       });

@@ -1,5 +1,5 @@
 import React, {useContext, useRef, useState} from 'react'
-import {Store} from '../Store';
+import Store from '../Store';
 
 const HOST_API = "http://localhost:8080/api";
 
@@ -42,7 +42,7 @@ const Form = ({categoryId}) => {
         name: state.name,
         id: item.id,
         isCompleted: item.isCompleted,
-        ListCategory: categoryId
+        groupListId: categoryId
       };
   
   

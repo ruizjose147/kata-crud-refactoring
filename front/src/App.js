@@ -1,7 +1,7 @@
 import React from 'react';
 import CategoryForm from './componets/categoryComponets/CategoryForm';
-import CategoryList from './componets/categoryComponets/CategoryList';
-import StoreProvider from './helpers/StoreProvider';
+import { StoreProvider } from './Store';
+import CategoryList from './componets/categoryComponets/CategoryList'
 
 function App() {
   return <StoreProvider>
