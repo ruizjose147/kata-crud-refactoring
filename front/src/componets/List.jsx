@@ -7,7 +7,7 @@ const List = ({categoryId}) => {
   
     const { dispatch, state: { todo } } = useContext(Store);
     const currentList = todo.list.filter(todo => {
-      return todo.ListCategory === categoryId;
+      return todo.groupListId === categoryId;
     });
   
     useEffect(() => {
@@ -36,7 +36,7 @@ const List = ({categoryId}) => {
         name: todo.name,
         id: todo.id,
         completed: event.target.checked,
-        ListCategory: categoryId
+        groupListId: categoryId
       };
       fetch(HOST_API + "/todo", {
         method: "PUT",

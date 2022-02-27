@@ -16,7 +16,7 @@ const Form = ({categoryId}) => {
         name: state.name,
         id: null,
         completed: false,
-        ListCategory: categoryId
+        groupListId: categoryId
       };
   
   
