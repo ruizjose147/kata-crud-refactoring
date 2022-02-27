@@ -16,7 +16,7 @@ public class TodoByCategory {
     private Long id;
 
     @Column
-    private String name;
+    private String nameList;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "groupListId")

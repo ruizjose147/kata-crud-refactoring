@@ -11,7 +11,7 @@ import java.util.List;
 public class TodoByCategoryDto {
 
     public Long id;
-    public String name;
+    public String nameList;
     private List<TodoDto> todos = new ArrayList<>();
 
 }
