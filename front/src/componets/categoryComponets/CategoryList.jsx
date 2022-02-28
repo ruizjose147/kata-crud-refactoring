@@ -28,15 +28,13 @@ const CategoryList = () => {
   
     return <div>
       {currentCategory.map((element) =>{
-        return<div className="border my-5 " key={element.id} >
+        return<div key={element.id} >
         <div >
             <span >Categoria</span>
-            <input 
-            className="form-control "  
+            <input   
             disabled={true} 
             value={element.nameList} />
             <button
-            className="btn btn-outline-danger" 
             onClick={() => onDelete(element.id)} >Eliminar
             </button>
         </div>

@@ -34,7 +34,6 @@ const CategoryForm = () => {
 
   return <form ref={formRef} className="form">
     <input
-      className="form-control"
       type="text"
       name="name"
       placeholder="Nombre de la categoria"
@@ -42,7 +41,7 @@ const CategoryForm = () => {
         setState({ ...state, nameList: event.target.value })
       }}  ></input>
     <br />
-    <button className="btn btn-outline-success" onClick={onAdd} >Crear</button>
+    <button onClick={onAdd} >Crear</button>
     <br />
   </form>
 }

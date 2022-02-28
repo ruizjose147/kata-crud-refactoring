@@ -73,6 +73,6 @@ const Form = ({categoryId}) => {
       {item.id && <button onClick={onEdit}>Actualizar</button>}
       {!item.id && <button onClick={onAdd}>Crear</button>}
     </form>
-  }
+}
 
   export default Form;
